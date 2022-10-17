@@ -1,11 +1,12 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
+import TrendingMovieList from 'components/TrendingMovieList/TrendingMovieList';
 
 import getFetchApi from '../../components/services/fetchApi';
 // import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-  const [moviesArr, setmoviesArr] = useState;
+  const [moviesArr, setMoviesArr] = useState([]);
   useEffect(() => {
     getFetchedMoviList();
   }, []);
@@ -13,6 +14,7 @@ const Home = () => {
   const getFetchedMoviList = async () => {
     try {
       const response = await getFetchApi();
+      setMoviesArr(response);
       console.log(response);
     } catch (err) {
       console.log(err);
@@ -22,9 +24,8 @@ const Home = () => {
       <div className="containet">
         <div>
           <h1>Trending today</h1>
-          <ul>
-            <li>Title</li>
-          </ul>
+
+          <TrendingMovieList moviesArr={moviesArr} />
         </div>
       </div>
     );
