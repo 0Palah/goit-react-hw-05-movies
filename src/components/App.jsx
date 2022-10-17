@@ -4,6 +4,7 @@ import Home from '../pages/Home/Home';
 import NotFound from 'pages/NotFound/NotFound';
 import Movies from 'pages/Movies/Movies';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
+import css from './App.module.css';
 
 export const App = () => {
   return (
@@ -19,8 +20,12 @@ export const App = () => {
     >
       <header>
         <nav>
-          <NavLink>Home</NavLink>
-          <NavLink>Movies</NavLink>
+          <NavLink to={'/'} className={css.navLink}>
+            Home
+          </NavLink>
+          <NavLink to={'/movies'} className={css.navLink}>
+            Movies
+          </NavLink>
         </nav>
       </header>
       <Routes>

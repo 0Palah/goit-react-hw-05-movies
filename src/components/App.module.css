@@ -1,0 +1,14 @@
+.navLink {
+  border: 2px solid black;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.navLink:not(:last-child) {
+  margin-right: 10px;
+}
+
+a.active {
+  color: deepskyblue;
+}
