@@ -22,7 +22,7 @@ export const App = () => {
     >
       <header className={css.header}>
         <nav>
-          <NavLink to={'/'} className={css.navLink}>
+          <NavLink to={'/'} end className={css.navLink}>
             Home
           </NavLink>
           <NavLink to={'/movies'} className={css.navLink}>

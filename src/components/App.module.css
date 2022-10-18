@@ -7,12 +7,14 @@
 .navLink {
   text-decoration: none;
   padding: 5px;
+  color: inherit;
 }
 
 .navLink:not(:last-child) {
   margin-right: 20px;
 }
 
-a.active {
-  color: deepskyblue;
+.navLink.active {
+  color: red;
+  border: 2px solid red;
 }
