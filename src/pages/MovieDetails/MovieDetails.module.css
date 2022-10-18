@@ -1,0 +1,24 @@
+.btnGoBack {
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.movieDetails {
+  display: flex;
+  gap: 20px;
+}
+
+.imgWrapper {
+  max-width: 400px;
+  object-fit: contain;
+}
+
+.img {
+  display: block;
+  object-fit: contain;
+  width: 100%;
+}

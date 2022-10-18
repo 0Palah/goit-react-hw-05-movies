@@ -3,14 +3,14 @@ import { useState, useEffect } from 'react';
 import TrendingMovieList from 'components/TrendingMovieList/TrendingMovieList';
 
 import getFetchApi from 'components/services/fetchApi';
-import getFetchById from 'components/services/fetchById';
+// import getFetchById from 'components/services/fetchById';
 
 // import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   const [moviesArr, setMoviesArr] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const [movieId, setMovieId] = useState('436270');
+  // const [movieId, setMovieId] = useState('436270');
 
   const getFetchedMovieList = async () => {
     try {
@@ -22,25 +22,25 @@ const Home = () => {
     }
   };
 
-  const getFetchedMovieById = async () => {
-    console.log(1);
-    // try {
-    const response = await getFetchById({ movieId });
+  // const getFetchedMovieById = async () => {
+  //   console.log(1);
+  //   // try {
+  //   const response = await getFetchById({ movieId });
 
-    // //   setMoviesArr(response);
-    // console.log(response);
-    // // } catch (err) {
-    // //   console.log(err);
-    // // }
-  };
+  //   //   setMoviesArr(response);
+  //   //   console.log(response);
+  //   // } catch (err) {
+  //   //   console.log(err);
+  //   // }
+  // };
 
   useEffect(() => {
     getFetchedMovieList();
   }, []);
 
-  useEffect(() => {
-    getFetchedMovieById();
-  }, []);
+  // useEffect(() => {
+  //   getFetchedMovieById();
+  // }, []);
 
   return (
     <div className="containet">

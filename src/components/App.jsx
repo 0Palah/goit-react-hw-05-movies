@@ -18,7 +18,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <header>
+      <header className={css.header}>
         <nav>
           <NavLink to={'/'} className={css.navLink}>
             Home

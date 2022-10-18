@@ -7,7 +7,7 @@ const TrendingMovieList = ({ moviesArr }) => {
       {moviesArr.map(el => {
         return (
           <li key={el.id}>
-            <Link> {el.title || el.name} </Link>
+            <Link to={`/movies/${el.id}`}> {el.title || el.name} </Link>
           </li>
         );
       })}
