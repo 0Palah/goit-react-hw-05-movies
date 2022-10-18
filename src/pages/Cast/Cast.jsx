@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getFetchCast from 'components/services/fetchCast';
 import { useParams } from 'react-router-dom';
+import css from './Cast.module.css';
 
 const Cast = () => {
   const [movieCast, setMovieCast] = useState();
@@ -29,15 +30,16 @@ const Cast = () => {
         const { id, name, character, profile_path } = el;
         return (
           <li key={id}>
-            <div className="cardWrap">
-              <div className="imgWrap">
+            <div className={css.cardWrap}>
+              <div className={css.imgWrap}>
                 <img
+                  className={css.img}
                   src={`https://image.tmdb.org/t/p/w500${profile_path}`}
                   alt="portrait"
                 />
               </div>
               <p>{name}</p>
-              <p>{character}</p>
+              <p>Character: {character}</p>
             </div>
           </li>
         );

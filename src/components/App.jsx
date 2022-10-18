@@ -5,6 +5,7 @@ import NotFound from 'pages/NotFound/NotFound';
 import Movies from 'pages/Movies/Movies';
 import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import Cast from 'pages/Cast/Cast';
+import Reviews from 'pages/Reviews/Reviews';
 import css from './App.module.css';
 
 export const App = () => {
@@ -34,10 +35,7 @@ export const App = () => {
         <Route path="/movies" element={<Movies></Movies>}></Route>
         <Route path="/movies/:movieId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast />}></Route>
-          <Route
-            path="reviews"
-            element={<div>Movies/:movieId/reviews</div>}
-          ></Route>
+          <Route path="reviews" element={<Reviews />}></Route>
         </Route>
 
         <Route path="*" element={<NotFound />}></Route>
