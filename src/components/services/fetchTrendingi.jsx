@@ -1,8 +1,4 @@
-import axios from 'axios';
-
-const themoviedbApi = axios.create({
-  baseURL: 'https://api.themoviedb.org/3',
-});
+import themoviedbApi from './axiosCreateAPI';
 
 const getFetchApi = async () => {
   const data = await themoviedbApi.get('/trending/movie/day', {

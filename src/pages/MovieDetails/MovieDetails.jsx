@@ -41,13 +41,22 @@ const MovieDetails = () => {
         </div>
         <div>
           <h2>{movieDetailsObj?.title}</h2>
+          <p>{`User Score: ${movieDetailsObj?.vote_average * 10}%`}</p>
+          <h3>Overview</h3>
+          <p>{movieDetailsObj?.overview}</p>
+          <h3>Genres</h3>
+          <p>{movieDetailsObj?.genres.map(el => el.name).join(' ')}</p>
         </div>
       </div>
       <div>
         <h3>Additional information</h3>
         <ul>
-          <Link to={'cast'}>Cast</Link>
-          <Link to={'reviews'}>Reviews</Link>
+          <li>
+            <Link to={'cast'}>Cast</Link>
+          </li>
+          <li>
+            <Link to={'reviews'}>Reviews</Link>
+          </li>
         </ul>
       </div>
       <Outlet />

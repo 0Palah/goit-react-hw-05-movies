@@ -1,7 +1,7 @@
 import themoviedbApi from './axiosCreateAPI';
 
-const getFetchById = async ({ movieId }) => {
-  const data = await themoviedbApi.get(`/movie/${movieId}`, {
+const getFetchCast = async ({ movieId }) => {
+  const data = await themoviedbApi.get(`/movie/${movieId}/credits`, {
     params: {
       api_key: 'd76cfeaddd14e5c6063db60e37f83b2f',
     },
@@ -9,4 +9,4 @@ const getFetchById = async ({ movieId }) => {
   return data.data;
 };
 
-export default getFetchById;
+export default getFetchCast;
