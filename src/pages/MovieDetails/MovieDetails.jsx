@@ -22,6 +22,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     getFetchedMovieById();
+    // eslint-disable-next-line
   }, []);
 
   if (!movieDetailsObj) return null;
