@@ -31,7 +31,6 @@ const Home = () => {
     <div className="containet">
       <div>
         <h1>Trending today</h1>
-
         <TrendingMovieList moviesArr={moviesArr} />
       </div>
     </div>

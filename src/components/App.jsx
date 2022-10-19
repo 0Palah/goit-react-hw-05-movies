@@ -1,15 +1,17 @@
 import { Route, Routes } from 'react-router-dom';
-// import { lazy } from 'react';
+import { lazy, Suspense } from 'react';
 import Home from '../pages/Home/Home';
-import NotFound from 'pages/NotFound/NotFound';
-import Movies from 'pages/Movies/Movies';
-import MovieDetails from 'pages/MovieDetails/MovieDetails';
-import Cast from 'pages/Cast/Cast';
-import Reviews from 'pages/Reviews/Reviews';
 import Layout from '../components/Layout/Layout';
-// import css from './App.module.css';
-
-// const Movies = lazy(() => import('../pages/Movies/Movies'));
+// import Movies from 'pages/Movies/Movies';
+// import MovieDetails from 'pages/MovieDetails/MovieDetails';
+// import Cast from 'pages/Cast/Cast';
+// import Reviews from 'pages/Reviews/Reviews';
+// import NotFound from 'pages/NotFound/NotFound';
+const Movies = lazy(() => import('../pages/Movies/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
+const Cast = lazy(() => import('../pages/Cast/Cast'));
+const Reviews = lazy(() => import('../pages/Reviews/Reviews'));
+const NotFound = lazy(() => import('../pages/NotFound/NotFound'));
 
 export const App = () => {
   return (
@@ -23,26 +25,51 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      {/* <header className={css.header}>
-        <nav>
-          <NavLink to={'/'} end className={css.navLink}>
-            Home
-          </NavLink>
-          <NavLink to={'/movies'} className={css.navLink}>
-            Movies
-          </NavLink>
-        </nav>
-      </header> */}
       <Layout />
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/movies" element={<Movies></Movies>}></Route>
-        <Route path="/movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />}></Route>
-          <Route path="reviews" element={<Reviews />}></Route>
+        <Route
+          path="/movies"
+          element={
+            <Suspense fallback={<p>Loading...</p>}>
+              <Movies></Movies>
+            </Suspense>
+          }
+        ></Route>
+        <Route
+          path="/movies/:movieId"
+          element={
+            <Suspense fallback={<p>Loading...</p>}>
+              <MovieDetails />
+            </Suspense>
+          }
+        >
+          <Route
+            path="cast"
+            element={
+              <Suspense fallback={<p>Loading...</p>}>
+                <Cast />
+              </Suspense>
+            }
+          ></Route>
+          <Route
+            path="reviews"
+            element={
+              <Suspense fallback={<p>Loading...</p>}>
+                <Reviews />
+              </Suspense>
+            }
+          ></Route>
         </Route>
 
-        <Route path="*" element={<NotFound />}></Route>
+        <Route
+          path="*"
+          element={
+            <Suspense fallback={<p>Loading...</p>}>
+              <NotFound />
+            </Suspense>
+          }
+        ></Route>
       </Routes>
     </div>
   );
