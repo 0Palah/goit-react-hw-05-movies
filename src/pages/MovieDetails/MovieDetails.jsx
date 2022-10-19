@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import getFetchById from 'components/services/fetchById';
 import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movieDetailsObj, setMovieDetailsObj] = useState();
-
   const { movieId } = useParams();
+  const location = useLocation();
   console.log(movieId);
 
   const getFetchedMovieById = async () => {
@@ -27,9 +27,11 @@ const MovieDetails = () => {
 
   if (!movieDetailsObj) return null;
 
+  console.log(location.state);
+
   return (
     <div>
-      <Link to={'/'} className={css.btnGoBack}>
+      <Link to={location.state.from} className={css.btnGoBack}>
         Go back
       </Link>
       <div className={css.movieDetails}>

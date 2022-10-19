@@ -1,8 +1,9 @@
-import getSearchMovie from 'components/services/fetchSearchMovie';
 import React, { useEffect, useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import getSearchMovie from 'components/services/fetchSearchMovie';
 
 const Movies = () => {
+  const location = useLocation();
   const [moviesFoundArr, setFoundArr] = useState([]);
   // const [searchQuery, setSearchQuery] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
@@ -27,7 +28,7 @@ const Movies = () => {
   };
 
   useEffect(() => {
-    getFetchedSearchMovie();
+    searchQuery && getFetchedSearchMovie();
     // eslint-disable-next-line
   }, [searchQuery]);
 
@@ -40,8 +41,14 @@ const Movies = () => {
       {moviesFoundArr.length > 0 && (
         <ul>
           {moviesFoundArr.map(el => {
-            const { id, title } = el;
-            return <li key={id}>{title}</li>;
+            return (
+              <li key={el.id}>
+                <Link to={`/movies/${el.id}`} state={{ from: location }}>
+                  {' '}
+                  {el.title || el.name}{' '}
+                </Link>
+              </li>
+            );
           })}
         </ul>
       )}
