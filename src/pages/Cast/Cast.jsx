@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import getFetchCast from 'components/services/fetchCast';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css';
+import anonymous from '../../img/anonymous.svg';
 
 const Cast = () => {
   const [movieCast, setMovieCast] = useState();
@@ -35,7 +36,11 @@ const Cast = () => {
               <div className={css.imgWrap}>
                 <img
                   className={css.img}
-                  src={`https://image.tmdb.org/t/p/w500${profile_path}`}
+                  src={
+                    profile_path
+                      ? `https://image.tmdb.org/t/p/w500${profile_path}`
+                      : anonymous
+                  }
                   alt="portrait"
                 />
               </div>
