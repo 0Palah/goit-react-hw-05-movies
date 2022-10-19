@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import getFetchCast from 'components/services/fetchCast';
-import { useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import css from './Cast.module.css';
 
 const Cast = () => {
+  const location = useLocation();
   const [movieCast, setMovieCast] = useState();
 
   const { movieId } = useParams();
