@@ -14,7 +14,7 @@
   margin-right: 20px;
 }
 
-.navLink.active {
+.active {
   color: red;
   border: 2px solid red;
 }

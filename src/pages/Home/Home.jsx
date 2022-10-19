@@ -9,7 +9,7 @@ import getFetchApi from 'components/services/fetchTrendingi';
 
 const Home = () => {
   const [moviesArr, setMoviesArr] = useState([]);
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
   // const [movieId, setMovieId] = useState('436270');
 
   const getFetchedMovieList = async () => {
@@ -24,11 +24,8 @@ const Home = () => {
 
   useEffect(() => {
     getFetchedMovieList();
+    // eslint-disable-next-line
   }, []);
-
-  // useEffect(() => {
-  //   getFetchedMovieById();
-  // }, []);
 
   return (
     <div className="containet">

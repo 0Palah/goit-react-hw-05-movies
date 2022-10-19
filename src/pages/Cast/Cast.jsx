@@ -20,6 +20,7 @@ const Cast = () => {
 
   useEffect(() => {
     getFetchedCast();
+    // eslint-disable-next-line
   }, []);
 
   if (!movieCast) return null;

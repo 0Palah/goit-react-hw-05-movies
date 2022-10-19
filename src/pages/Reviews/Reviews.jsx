@@ -20,6 +20,7 @@ const Reviews = () => {
 
   useEffect(() => {
     getFetchedReviews();
+    // eslint-disable-next-line
   }, []);
 
   if (!movieReviews || movieReviews.length === 0)
