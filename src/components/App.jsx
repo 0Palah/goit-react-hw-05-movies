@@ -1,5 +1,5 @@
 import { NavLink, Route, Routes } from 'react-router-dom';
-
+// import { lazy } from 'react';
 import Home from '../pages/Home/Home';
 import NotFound from 'pages/NotFound/NotFound';
 import Movies from 'pages/Movies/Movies';
@@ -7,6 +7,8 @@ import MovieDetails from 'pages/MovieDetails/MovieDetails';
 import Cast from 'pages/Cast/Cast';
 import Reviews from 'pages/Reviews/Reviews';
 import css from './App.module.css';
+
+// const Movies = lazy(() => import('../pages/Movies/Movies'));
 
 export const App = () => {
   return (

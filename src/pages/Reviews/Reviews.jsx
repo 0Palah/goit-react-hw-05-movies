@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import getFetchReviews from 'components/services/fetchReviews';
-import { useLocation, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import css from './Reviews.module.css';
 
 const Reviews = () => {
-  const location = useLocation();
   const [movieReviews, setMovieReviews] = useState();
 
   const { movieId } = useParams();
