@@ -3,14 +3,9 @@ import { useState, useEffect } from 'react';
 import TrendingMovieList from 'components/TrendingMovieList/TrendingMovieList';
 
 import getFetchApi from 'components/services/fetchTrendingi';
-// import getFetchById from 'components/services/fetchById';
-
-// import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   const [moviesArr, setMoviesArr] = useState([]);
-  // const [searchQuery, setSearchQuery] = useState('');
-  // const [movieId, setMovieId] = useState('436270');
 
   const getFetchedMovieList = async () => {
     try {
