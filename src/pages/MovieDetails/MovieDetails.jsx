@@ -27,11 +27,11 @@ const MovieDetails = () => {
 
   if (!movieDetailsObj) return null;
 
-  console.log(location.state);
+  const backLinkHref = location.state?.from ?? '/';
 
   return (
     <div>
-      <Link to={location.state.from} className={css.btnGoBack}>
+      <Link to={backLinkHref} className={css.btnGoBack}>
         Go back
       </Link>
       <div className={css.movieDetails}>
@@ -55,12 +55,12 @@ const MovieDetails = () => {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <Link to={'cast'} state={{ from: location }}>
+            <Link to={'cast'} state={{ from: location.state?.from }}>
               Cast
             </Link>
           </li>
           <li>
-            <Link to={'reviews'} state={{ from: location }}>
+            <Link to={'reviews'} state={{ from: location.state?.from }}>
               Reviews
             </Link>
           </li>
