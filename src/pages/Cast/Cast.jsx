@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import getFetchCast from 'components/services/fetchCast';
+import getFetchCast from 'services/fetchCast';
 import { useParams } from 'react-router-dom';
 import css from './Cast.module.css';
-import anonymous from '../../img/anonymous.svg';
+import anonymous from '../../assets/anonymous.svg';
 
 const Cast = () => {
   const [movieCast, setMovieCast] = useState();
@@ -12,10 +12,9 @@ const Cast = () => {
   const getFetchedCast = async () => {
     try {
       const response = await getFetchCast({ movieId });
-      console.log(response.cast);
       setMovieCast(response.cast);
     } catch (err) {
-      console.log(err);
+      alert(err);
     }
   };
 

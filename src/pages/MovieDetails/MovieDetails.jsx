@@ -1,22 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import getFetchById from 'components/services/fetchById';
+import getFetchById from 'services/fetchById';
 import css from './MovieDetails.module.css';
 
 const MovieDetails = () => {
   const [movieDetailsObj, setMovieDetailsObj] = useState();
   const { movieId } = useParams();
   const location = useLocation();
-  console.log(movieId);
 
   const getFetchedMovieById = async () => {
     try {
       const response = await getFetchById({ movieId });
-
-      console.log(response);
       setMovieDetailsObj(response);
     } catch (err) {
-      console.log(err);
+      alert(err);
     }
   };
 

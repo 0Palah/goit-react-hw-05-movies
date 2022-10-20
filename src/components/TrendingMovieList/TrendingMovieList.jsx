@@ -9,8 +9,7 @@ const TrendingMovieList = ({ moviesArr }) => {
         return (
           <li key={el.id}>
             <Link to={`/movies/${el.id}`} state={{ from: location }}>
-              {' '}
-              {el.title || el.name}{' '}
+              {el.title || el.name}
             </Link>
           </li>
         );

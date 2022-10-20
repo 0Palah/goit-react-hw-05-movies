@@ -1,8 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import TrendingMovieList from 'components/TrendingMovieList/TrendingMovieList';
-
-import getFetchApi from 'components/services/fetchTrendingi';
+import getFetchApi from 'services/fetchTrendingi';
 
 const Home = () => {
   const [moviesArr, setMoviesArr] = useState([]);
@@ -11,9 +10,8 @@ const Home = () => {
     try {
       const response = await getFetchApi();
       setMoviesArr(response);
-      console.log(response);
     } catch (err) {
-      console.log(err);
+      alert(err);
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import getFetchReviews from 'components/services/fetchReviews';
+import getFetchReviews from 'services/fetchReviews';
 import { useParams } from 'react-router-dom';
 import css from './Reviews.module.css';
 
@@ -11,10 +11,9 @@ const Reviews = () => {
   const getFetchedReviews = async () => {
     try {
       const response = await getFetchReviews({ movieId });
-      console.log(response.results);
       setMovieReviews(response.results);
     } catch (err) {
-      console.log(err);
+      alert(err);
     }
   };
 

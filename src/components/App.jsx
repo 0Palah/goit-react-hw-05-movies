@@ -2,11 +2,6 @@ import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import Home from '../pages/Home/Home';
 import Layout from '../components/Layout/Layout';
-// import Movies from 'pages/Movies/Movies';
-// import MovieDetails from 'pages/MovieDetails/MovieDetails';
-// import Cast from 'pages/Cast/Cast';
-// import Reviews from 'pages/Reviews/Reviews';
-// import NotFound from 'pages/NotFound/NotFound';
 const Movies = lazy(() => import('../pages/Movies/Movies'));
 const MovieDetails = lazy(() => import('../pages/MovieDetails/MovieDetails'));
 const Cast = lazy(() => import('../pages/Cast/Cast'));
@@ -18,7 +13,6 @@ export const App = () => {
     <div
       style={{
         height: '100vh',
-        // display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         fontSize: 40,
