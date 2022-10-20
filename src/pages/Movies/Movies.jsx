@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
+import { useLocation, useSearchParams } from 'react-router-dom';
 import getSearchMovie from 'services/fetchSearchMovie';
+import ListItem from 'components/ListItem/ListItem';
 
 const Movies = () => {
   const location = useLocation();
@@ -38,11 +39,12 @@ const Movies = () => {
         <ul>
           {moviesFoundArr.map(el => {
             return (
-              <li key={el.id}>
-                <Link to={`/movies/${el.id}`} state={{ from: location }}>
-                  {el.title || el.name}
-                </Link>
-              </li>
+              <ListItem key={el.id} el={el} location={location} />
+              // <li key={el.id}>
+              //   <Link to={`/movies/${el.id}`} state={{ from: location }}>
+              //     {el.title || el.name}
+              //   </Link>
+              // </li>
             );
           })}
         </ul>
